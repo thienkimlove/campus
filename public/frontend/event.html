@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- css main -->
+<link rel="stylesheet" href="css/menu-mobile.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/monthly.css">
+<link rel="stylesheet" href="css/datepicker.css">
+</head>
+<body>
+<!-- topnav--> 
+<!-- menu mobile-->
+<div class="wsmenucontent overlapblackbg"></div>
+<div class="manumain"><a id="navToggle" class="animated-arrow slideLeft"><span></span></a> <a href="index.html"><span class="logo"><img src="images/logo-demo.png"></span></a></div>
+<!-- Top-->
+<header id="tophead">
+  <div  class="wsmenu slideLeft">
+    <div class="inner-page clearfix"> <a class="logo" href="#" target="_blank"><img src="images/logo-demo.png"></a>
+      <form class="formlogin">
+        <p class="note-ac"> <span><img src="images/warm.png"></span> </p>
+        <input name="" type="text"  placeholder="Username" class="input">
+        <input name="" type="text"  placeholder="Password" class="input">
+        <input name="" type="button" value="Đăng nhập" class="bt">
+        <a href="#" class="loginface"><img src="images/bt-loginface.png"></a>
+      </form>
+    </div>
+  </div>
+</header>
+<!-- menu right -->
+<div class="pennelRight">
+  <h2>Tôi muốn</h2>
+  <ul class="listtext">
+    <li><a href="#">Thành lập một CLB</a></li>
+    <li><a href="#">Tham gia một CLB</a></li>
+    <li><a href="#">Tham gia sự kiện</a></li>
+    <li><a href="#">Tìm học bổng</a></li>
+    <li><a href="#">Đọc tin tức</a></li>
+    <li><a href="#">Thành lập một CLB</a></li>
+  </ul>
+  <a class="btface" href="#">Facebook</a> </div>
+<section class="topbanner">
+  <div class="inner-page">
+    <div class="bxsearch"> <a href="#" class="creatclb"><img src="images/creat-clb.png"></a> <a href="#" class="searchclb"><img src="images/search-clb.png"></a>
+      <form class="formseach">
+        <input name="" type="text" placeholder="Tìm kiếm" class="inputsearch">
+        <input name="" type="button"  class="btsearch">
+      </form>
+    </div>
+  </div>
+</section>
+<section class="Maincont">
+  <div class="inner-page"> 
+    <!-- Menu-->
+    <ul class="navbox">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="campus.html">Campus</a></li>
+      <li class="active"><a href="event.html">Sự kiện</a></li>
+      <li><a href="orientation.html">Hướng nghiệp</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- top news-->
+<section id="topnews" class="blockrows bgblock">
+  <div class="inner-page">
+    <div class="topevent">
+      <div class="slider_area">
+        <div class="bxpost"> <img src="update-images/1.jpg" class="img">
+          <div class="article-content"><a href="#">Chúng tôi là một nền tảng cộng đồng dành cho những người trẻ</a></div>
+        </div>
+      </div>
+      <div class="beside_slider">
+        <div class="single-article ">
+          <div class="bxpost"> <img src="update-images/2.jpg" class="img">
+            <div class="article-content"><a href="#">Chúng tôi là một nền tảng cộng đồng dành cho những người trẻ</a></div>
+          </div>
+        </div>
+        <div class="single-article ">
+          <div class="bxpost"> <img src="update-images/1.jpg" class="img">
+            <div class="article-content"><a href="#">Chúng tôi là một nền tảng cộng đồng dành cho những người trẻ</a></div>
+          </div>
+        </div>
+        <div class="single-article ">
+          <div class="bxpost"> <img src="update-images/3.jpg" class="img">
+            <div class="article-content"><a href="#">Chúng tôi là một nền tảng cộng đồng dành cho những người trẻ</a></div>
+          </div>
+        </div>
+        <div class="single-article ">
+          <div class="bxpost"> <img src="update-images/4.jpg" class="img">
+            <div class="article-content"><a href="#">Chúng tôi là một nền tảng cộng đồng dành cho những người trẻ</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- event-->
+<section id="event" class="blockrows">
+  <div class="inner-page">
+    <h2 class="title">Sự kiện</h2>
+    <div class="monthly" id="mycalendar"></div>
+    <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+  </div>
+</section>
+
+<!-- career-->
+<section id="mainevent" class="blockrows bgblock">
+  <div class="inner-page">
+    <h2 class="title">Tiêu điểm sự kiện</h2>
+    <div class="bxevent bxcol">
+      <div class="bxleft">        
+        <ul class="tabnews nav nav-tabs">
+          <li  class="active"><a  class="newslasted" data-toggle="tab" href="#newslaste">Tin mới nhất</a></li>
+          <li><a class="actClb" data-toggle="tab" href="#actClb">Hoạt động CLB</a></li>
+          <li><a  class="addJobs" data-toggle="tab" href="#addJobs">Tuyển thành viên</a></li>
+          <li><a class="jobs"  data-toggle="tab" href="#jobs">Nghề nghiệp</a></li>
+        </ul>
+      </div>
+      <div class="bxright">
+        <div class="tab-content">
+          <div id="newslaste" class="tab-pane fade in active">
+            <ul class="listPost">
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+            </ul>
+            <div class="rowbt"> <a href="#" class="bt mb20px">Xem thêm</a> </div>
+          </div>
+          <div id="actClb" class="tab-pane fade">
+            <ul class="listPost">
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+            </ul>
+            <div class="rowbt"> <a href="#" class="bt mb20px">Xem thêm</a> </div>
+          </div>
+          <div id="addJobs" class="tab-pane fade">
+            <ul class="listPost">
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+            </ul>
+            <div class="rowbt"> <a href="#" class="bt mb20px">Xem thêm</a> </div>
+          </div>
+          <div id="jobs" class="tab-pane fade">
+            <ul class="listPost">
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+              <li>
+                <figure class="postImg"><a href="articledetail.html" title="News with Coffee"><img src="update-images/newsimg.jpg" ></a></figure>
+                <div class="contPost"> <a class="postTitle"href="articledetail.html" title="News with Coffee">Cười đau ruột với những tình huống hài 'bá đạo' của bố mẹ </a>
+                  <div class="entryPost">Posted by Admin | 18-08-2016</div>
+                  <div class="postSubcript"> England despite a draw at Stoke, after Paris Saint-Germain Atlético Madrid, Barcelona and Real Madrid scored 14 goals between them and Arsenal returned top in England despite a draw at Stoke, after Paris Saint-Germain between them and Arsenal... </div>
+                </div>
+              </li>
+            </ul>
+            <div class="rowbt"> <a href="#" class="bt mb20px">Xem thêm</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- client--> 
+
+<!-- footer -->
+<footer class="bgblock">
+  <div class="inner-page clearfix">
+    <p>Esports for Student Campus (ESC) là một mạng lưới các câu lạc bộ dành cho các sinh viên đam mê với thể thao điện tử tại Việt Nam. <br>
+      © Copyright 2015 Garena Online</p>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/mobile-menu.js"></script> 
+<script type="text/javascript" src="js/monthly.js"></script> 
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script> 
+<script type="text/javascript">
+	$(window).load( function() {
+		$('#mycalendar').monthly({			
+		});
+	}); 
+	
+	    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+</body>
+</html>

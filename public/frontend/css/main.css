@@ -1,0 +1,406 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic&subset=latin,vietnamese,cyrillic-ext,latin-ext);
+Body, html, div, img, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dd, dt, blockquote, fieldset, legend, label, input, textarea {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+	outline: none !important;
+}
+img, object, embed {
+	border: 0 none;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;	
+	height: auto;
+}
+body {
+	color: #7a7a7a;
+	position: relative;
+	font-size: 16px;	
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	background-color:#f8f8f8;
+}
+a {
+	text-decoration: none; 
+	color:#f18d05;	
+	transition: all 0.2s ease 0s;outline:none;
+}
+a:hover,a:focus { color:#ffa935;text-decoration: none; }
+
+table { 
+  width: 100%; 
+  border-collapse: collapse;
+}
+
+th { 
+  
+  color: #0089dd; 
+  font-weight: bold; text-transform:uppercase; font-size:18px ;border-bottom: 3px solid #0089dd;padding: 10px 13px; 
+}
+td { 
+  padding: 10px 13px; 
+  border-bottom: 1px solid #ccc;  color:#333
+}
+
+.fleft { float:left}
+
+.bt { background-color:#f18d05; color:#fff; border:none; font-size:16px; text-transform:uppercase; font-weight:300; text-align:center; padding:10px 20px; display:inline-block; margin-bottom:5px}
+.bt:hover { background-color:#ffa935; color:#fff;}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0
+}
+* html .clearfix {
+	height: 1%
+}
+.txtcent { margin-top:15px; text-align:center}
+
+
+.accordion {overflow:hidden;}
+
+/*----- Section Titles -----*/
+.accordion-section {}
+.accordion-section-title {		
+	display:block;	
+	transition:all linear 0.15s; font-weight:bold;	
+	color:#f18d05;
+}
+
+.accordion-section-title.active, .accordion-section-title:hover {
+	text-decoration:none;
+}
+.accordion-section-content {
+	border:1px solid #ccc;
+	display:none;
+}
+
+
+/* =SOCIAL LINKS
+----------------------------------------------- */
+.fa {
+	font-size: 16px;
+	color: #333;
+}
+.social-links {
+	text-align: center;
+	float: right;
+}
+.social-links ul li {
+	display: inline;
+	margin: 0 3px;
+}
+.social-links ul li a { display:inline-block; line-height:26px;}
+.social-links ul li a span { font-family: Roboto; }
+.social-links i.fa {		
+	text-align: center;
+	transition: background-color 0.2s ease-out 0s;
+	font-size: 25px;
+	color: #fff;
+	line-height: 20px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px; padding:5px
+}
+.social-links i.fa-twitter {
+	background-color: #1BB2E9;
+}
+.social-links i.fa-facebook {
+	background-color: #3B5A9B;
+}
+.social-links i.fa-youtube {
+	background-color: #ED3F41;
+}
+.social-links i.fa-google-plus {
+	background-color: #DC4937;
+}
+
+.boxshare { overflow:hidden; margin-bottom:10px}
+.boxshare .social-links  { float:right;}
+.boxshare li { float:left}
+.boxshare li a span,.boxshare li a i { color:#fff !important}
+.boxshare .social-links i.fa {
+	font-size: 14px;	
+	width: auto;
+	padding: 4px 8px
+}
+
+.title { font-size:60px; font-weight:400; text-transform:uppercase;  color:#f18d05; text-align:center; margin:3% 0 0% 0}
+.discript { text-align:center}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.blockrows { padding:2% 0}
+.bgblock { background:url(../images/bg-bx.jpg) repeat;}
+/*== css main===*/
+.inner-page { width:1170px; margin:0 auto; position:relative;}
+.rowbt { text-align:center; padding:2% 0}
+/*== nav top ===*/
+#tophead { background-color:#616161; height:50px;}
+#tophead .logo { float:left; margin-top:5px;}
+#tophead .logo img{ height:40px;}
+#tophead .formlogin { float:right; padding-top:11px}
+#tophead .formlogin .note-ac { background:url(../images/icon-mail.png) no-repeat; background-size:cover; width:32px; height:22px; position:relative; margin-top:5px; margin-right:10px}
+#tophead .formlogin .note-ac span { position:absolute; right:-5px; top:-5px;}
+#tophead .formlogin * { float:left; margin-left:5px;}
+#tophead .formlogin .input { width:150px; color:#f18d05; padding:2px 10px; font-size:12px}
+#tophead .formlogin .bt{ font-size:14px; padding:2px 5px}
+
+
+
+/*banner top==*/
+.topbanner { background:url(../images/bg-banner-top.jpg) top no-repeat; background-size:100% cover; padding:2% 0}
+.topbanner h2 { font-size:90px; text-align:center; text-transform:uppercase; padding-top:7%; margin-bottom:5%; color:#FFF;}
+.topbanner .bxsearch { background-color:rgba(255,255,255,0.6); padding:1%; overflow:hidden}
+.topbanner .creatclb,.topbanner .searchclb { float:left; width:20%}
+.topbanner .searchclb { margin-left:-15px}
+.topbanner .formseach {float:right; overflow: hidden; padding-top:1%}
+.topbanner .formseach .inputsearch { background:url(../images/bg-search.png) no-repeat; background-size:100% 100%; width:242px; float:left; height:44px; padding-left:20px; margin-top:3%;color:#f18d05;}
+.topbanner .formseach .btsearch { width:25%; float:left;  background:url(../images/bt-search.png) no-repeat; background-size:100% 100%; width:61px; height:57px; margin-left:-10px;}
+
+/*==== Menu  main=====*/
+.navbox { text-align:center; overflow:hidden}
+.navbox  li { width:25%;display:inline-block; float:left; border-top:3px solid #fff}
+.navbox  li a { color:#f18d05; font-size:22px; text-transform:uppercase; display:inline-block; padding:10px 0; font-weight:500}
+.navbox  li.active,.navbox  li:hover { border-color:#f18d05}
+
+/*====whatesc=====*/
+#whatesc #bxvideo { margin:2% 0}
+#whatesc .bt {}
+#event .monthly{ margin:3% 0 1% 0}
+
+/*====client=====*/
+#client .clientList { overflow:hidden;}
+#client .clientList li { float:left; width:25%; padding:2%; text-align:center}
+
+/*=== tab carree===*/
+.cartabs  { padding:3% 0}
+.cartabs .nav { text-align:center; padding-left:50px; background:url(../images/bg-line.png) center center no-repeat; background-size:100% auto;}
+.cartabs .nav li { width:130px; height:130px; margin:0 5%; padding:10px; background-color:#e1e1e1; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; margin-top:2%}
+.cartabs .nav li a { background-color:#f18d05; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; display:block; line-height:14px; width:110px; height:110px; color:#fff; text-transform:uppercase; font-size:10px; outline:none}
+.cartabs .nav li a img { width:70%}
+
+.cartabs .nav li.active { width:170px; height:170px; margin-top:1%}
+.cartabs .nav li.active a { width:150px; height:150px;background-color:#f18d05;}
+.cartabs .tab-content { padding:3%; text-align:center}
+.cartabs .tab-content h3 { font-size:24px; color:#f18d05; text-transform:uppercase; margin-bottom:3%}
+
+.pennelRight { position:fixed; top:20%; right:0; width:200px; color:#f18d05; border:1px solid #CCC; background-color:#fff; z-index:999}
+.pennelRight h2 { background:url(../images/icon-ware.png) left no-repeat; padding-left:40px; line-height:39px; font-weight:400px; text-transform:uppercase; font-size:14px; margin-left:10px}
+.pennelRight .listtext { padding-left:10px;}
+.pennelRight .listtext li { background:url(../images/narrow.png) center left no-repeat; padding-left:20px; line-height:28px; display:block}
+.pennelRight .listtext li:last-child a{ border:none}
+.pennelRight .listtext li a {color:#f18d05; border-bottom:1px solid #f18d05; display:block}
+.pennelRight .listtext li a:hover { color:#666}
+.pennelRight .btface { width:100%; color:#fff; background:#f18d05 url(../images/icon-face.png) 5px center no-repeat; padding:2px; line-height:30px; display:block; text-align:center; margin-top:5px;}
+
+#chStudent .listchance { padding:2%; text-align:center;}
+#chStudent .listchance li { background:url(../images/bg-tab.jpg) no-repeat; background-size:cover; width:29%; margin:1.5%; display:inline-block; padding:4% 2% 2% 2%;}
+#chStudent .listchance li h2 { font-size:18px; text-transform:uppercase}
+#chStudent .listchance li .conttext { height:250px; color:#fff}
+
+/*== discover===*/
+.discontent { padding:10px 0; margin-top:30px;}
+.discontent .boxline { background-color:#d7d7d7; min-height:150px; padding:10px 10px 0px 10px ; margin-bottom:20px; position:relative;}
+
+.discontent .firtTitle {  width:210px; position:absolute; top:-5px; left:0; bottom:-5px; background-color:#616161; color:#fff ; text-align:center; padding:50px 10px 10px 10px;}
+.discontent .firtTitle span { display:inline-table;  vertical-align: middle;  line-height: normal;}
+
+.discontent .firtTitle h2 { text-transform:uppercase; font-size:18px}
+.discontent .listjobs { overflow:hidden; padding-left:230px;}
+.discontent .listjobs li { width:210px; height:210px; float:left; margin-right:20px; border:1px solid #eee; background-color:#ccc; text-align:center; padding:10px; font-size:14px; line-height:22px; margin-bottom:10px; }
+
+.discontent .listjobs li h2 { text-transform:uppercase; font-size:18px; margin:5px 0;}
+.discontent .boxline:nth-of-type(odd) {background-color:#fbe2c0;}
+.discontent .boxline:nth-of-type(odd) .firtTitle { background-color:#f18d05;} 
+.discontent .boxline:nth-of-type(odd) li {border:1px solid #eacea6; background-color:#fdf2e4;color:#7c4700}
+
+/*== campus page===*/
+#campus-block1 .listcontrol { text-align:center; margin-top:1%}
+#campus-block1 .listcontrol li { background: url(../images/bg3.jpg) no-repeat; background-size:cover; display:inline-block; width:48%; margin:0.5%; position:relative}
+#campus-block1 .listcontrol li .contblock { background-color:rgba(0,0,0,0.5); padding:4%; text-align:center; color:#fff}
+#campus-block1 .listcontrol li .contblock h2 { font-size:18xp; text-transform:uppercase; margin:1% 0}
+#campus-block1 .listcontrol li .contblock.bgorang { background-color:rgba(255,153,0,0.5)}
+/*== box collum====*/
+.bxcol { overflow:hidden; margin:2% 0}
+.bxcol .bxleft { width:22%; float:left}
+.bxcol .bxright { width:75%; float:right; border:1px solid #CCC; padding:3%}
+ .bxsClb .midcont .acticle { font-size:24px; color:#f18d05; text-transform:uppercase; text-align:center; margin-bottom:5px}
+ .bxsClb .midcont .discript { font-size:18px; color:#f18d05; text-transform:uppercase; margin-bottom:20px; text-align:center}
+ .bxsClb .midcont h6 { margin:15px 0; text-align:center}
+/*== FAQ====*/
+#question {  margin-bottom:5px}
+.bxquest { margin-top:30px;}
+.bxquest .panel { background-color:transparent; border-bottom:1px solid #CCC; padding:10px 0; box-shadow:none}
+.bxquest .panel-title { background:url(../images/icon-question.png) no-repeat left center; padding-left:40px; line-height:30px}
+.bxquest .panel-title a { color:#f18d05; outline:none}
+.bxquest .panel-title a:hover,.bxquest .panel-title a:focus,.bxquest .panel-title a:active { text-decoration:none}
+.bxquest  .panel-collapse { border:1px solid #ccc; margin-left:30px; margin-top:5px}
+.bxsClb .bxleft .accordion-section-title { background:url(../images/icon-map.png) 10px center no-repeat; color:#666; outline:none; padding:10px 0 10px 40px; border-bottom:1px solid #ccc; margin:0}
+.bxsClb .bxleft .accordion { margin-bottom:20px}
+.bxsClb .bxleft .accordion-section-title.active { background:#f18d05 url(../images/icon-map-w.png)  10px center no-repeat; color:#fff }
+.bxsClb .bxleft .accordion-section-content { border:none; padding-left:10px; margin-bottom:10px;}
+.listunv { padding-left:28px;}
+.listunv li { list-style:circle !important; font-size:20px; padding-left:0; margin:0}
+.listunv li a { font-size:14px; color:#666}
+.listunv li a:hover { text-decoration:none; color:#f18d05}
+
+/*=== top news event ===*/
+.topevent { overflow:hidden;}
+.slider_area { float: left;width: 49.3%; position:relative;}
+.beside_slider {float: right;  width: 50.3%;}
+
+ .single-article { float: left; margin-bottom: 1%;   margin-right: 1%;   max-width: 48%;position: relative;}
+  .bxpost { position:relative;}
+ .bxpost .img { width:100%}
+ .article-content {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)) repeat scroll 0 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    padding-left: 3%;
+    padding-right: 3%;
+    position: absolute;
+    width: 100%;
+}
+ .article-content a { color:#fff; font-size:16px; line-height:20px}
+ 
+ #mainevent { margin-bottom:5px}
+ .bxevent { padding-top:5%}
+.bxevent .bxright { border:none; padding:0 0 0 20px}
+
+.tabnews li { border-bottom:1px solid #ccc; display:block; float:none}
+.tabnews li a { padding:10px 10px 10px 35px !important; color:#666; font-size:18px; display:block; text-transform:uppercase; border-radius:0; margin:0; outline:none; border:0 !important}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {background-color:#f18d05; box-shadow:none; border:0; color:#fff}
+.tabnews li a:hover,.tabnews li a:focus { background-color:transparent; box-shadow:none; border:0}
+
+.tabnews li .newslasted { background:url(../images/icon-fly.png) 10px center no-repeat}
+.tabnews li .actClb { background:url(../images/icon-map.png) 10px center no-repeat}
+.tabnews li .addJobs { background:url(../images/icon-voice1.png) 10px center no-repeat}
+.tabnews li .jobs { background:url(../images/icon-pad.png) 10px center no-repeat}
+
+.tabnews li.active .newslasted { background:#f18d05 url(../images/icon-fly-w.png) 10px center no-repeat}
+.tabnews li.active .actClb { background:#f18d05 url(../images/icon-map-w.png) 10px center no-repeat}
+.tabnews li.active .addJobs { background:#f18d05 url(../images/icon-voice1-w.png) 10px center no-repeat}
+.tabnews li.active .jobs { background:#f18d05 url(../images/icon-pad-w.png) 10px center no-repeat}
+
+
+.listPost li { padding-bottom:3%; margin-bottom:3%; border-bottom:1px  dashed #ccc; overflow:hidden}
+.listPost li .postImg { float:left; width:30%; margin:0; padding:0; border:7px solid rgba(255,255,255,1)}
+.listPost li .contPost { float:right; width:68%;}
+.listPost li .contPost .postTitle{ padding-bottom:1%; color:#f18d05;  font-size:18px; font-weight:400}
+.listPost li .contPost .postTitle:hover { color:#b1334b}
+.listPost li .entryPost { font-size:12px; color:#6a6a6a; margin-bottom:5px}
+.listPost li .postSubcript { font-size:16px; margin-top:5px}
+
+/*=== Post detail */
+.pagecurrent { padding:10px 0}
+.postdetail { text-align:justify; background-color:#fff; padding:2%;}
+.postdetail .acticle { border-left:3px solid #f18d05; padding-left:5px; overflow:hidden; margin-bottom:15px}
+.postdetail .acticle .leftact { float:left; width:900px;}
+.postdetail .acticle .leftact h2{font-size:18px; font-weight:bold; text-transform:uppercase; color:#f18d05; text-align:left;}
+.postdetail .acticle .leftact .time { font-size:12px; color:#666;}
+.postdetail .acticle .leftact .time i { color:#6a6a6a; font-size:14px }
+
+.postdetail .postcont h6 { margin:2% 0; text-align:center}
+.postdetail .postcont p { margin-bottom:10px}
+.postdetail .postcont h6 img { width:100%}
+
+/* =PAGINATION
+----------------------------------------------- */
+.pagination {margin: 2% 0;text-align: center; width:100%;}
+.pagination li  {color: #f18d05;margin:0 3px; display:inline-block}
+.pagination > .active > span:hover,.pagination > .active > span  { background-color:#f18d05; border-color:#f18d05}
+.pagination li a {color: #f18d05;}
+.pagination li:hover a,.pagination li.active a{color: #b1334b;}
+/*== footer==*/
+footer { text-align:center; padding:5%;}
+
+
+@media screen and (max-width:790px) {
+	
+body {
+	font-size: 14px;		
+	line-height: 20px;
+	
+}
+#tophead .formlogin { float:none; padding-top:70px}
+#tophead .formlogin .note-ac { background:url(../images/icon-mail.png) no-repeat; background-size:cover; width:32px; height:22px; position:relative; margin-top:5px; margin-bottom:10px;}
+#tophead .formlogin .note-ac span { position:absolute; right:-5px; top:-5px;}
+#tophead .formlogin * { float:none; margin-left:0px;}
+#tophead .formlogin .input { width:100%; color:#f18d05; padding:4px 10px; font-size:12px; margin-bottom:3px;}
+#tophead .formlogin .bt{ font-size:14px; padding:4px 5px; width:100%; text-align: center}
+#tophead .formlogin .loginface { width:100%; text-align:center; display:block}
+
+
+.topbanner .creatclb,.topbanner .searchclb { margin-top:3%}
+.topbanner h2 { font-size:70px;}
+.bt { padding:8px 15px; font-size:14px;}
+.inner-page { width:96%; margin:0 auto;}
+.title { font-size:35px; }
+/*=== tab carree===*/
+.cartabs .nav { text-align:center; padding-left:1%; background:url(../images/bg-line.png) center center no-repeat; background-size:100% auto;}
+.cartabs .nav li { width:110px; height:110px; margin:0 2%; padding:5px; background-color:#e1e1e1; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; margin-top:2%}
+.cartabs .nav li a { background-color:#f18d05; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; display:block; line-height:14px; width:100px; height:100px; color:#fff; text-transform:uppercase; font-size:10px; outline:none}
+
+
+.cartabs .nav li.active { width:140px; height:140px; margin-top:1%}
+.cartabs .nav li.active a { width:130px; height:130px;background-color:#f18d05;}
+.cartabs .tab-content { padding:5%; text-align:center}
+.pennelRight { display:none}
+.postdetail .acticle .leftact { float:none; width:100%; margin-bottom:5px}
+}
+
+ @media screen and (max-width:580px) {
+ .topbanner h2 { font-size:30px;}
+.title { font-size:26px; }
+.navbox  li { width:25%;display:inline-block; float:left; border-top:2px solid #fff}
+.navbox  li a { font-size:11px; padding:10px 0; font-weight:500}
+.topbanner .creatclb,.topbanner .searchclb {  width:50%; margin-top:0}
+.topbanner .bxsearch { margin-top:10px}
+.topbanner .searchclb { margin-left:-2%}
+.topbanner .formseach {float:left; overflow: hidden; padding-top:10px; padding-left:15%}
+/*=== tab carree===*/
+.cartabs .nav { text-align:center; padding-left:1%; background:url(../images/bg-line.png) center center no-repeat; background-size:100% auto;}
+.cartabs .nav li { width:80px; height:80px; margin:0 2px; padding:4px; background-color:#e1e1e1; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; margin-top:2%; line-height:80px}
+.cartabs .nav li a { background-color:#f18d05; border-radius:100%; -webkit-border-radius:100%; -moz-border-radius:100%; display:block; line-height:5px; width:72px; height:72px; color:#fff; text-transform:uppercase; font-size:6px; outline:none; padding-top:30%}
+.cartabs .nav li a img { width:70%}
+.cartabs .nav li a .txt { display:none}
+.cartabs .nav li.active { width:82px; height:82px; margin-top:1%;line-height:82px}
+.cartabs .nav li.active a { width:74px; height:74px;background-color:#f18d05;}
+.cartabs .tab-content { padding:5%; text-align:center}
+#chStudent .listchance li { width:100%; margin:1% 0%;}
+
+.discontent .boxline { background-color:#fbe2c0; min-height:150px; padding:10px 10px 20px 10px ; margin-bottom:20px; position:relative;}
+.discontent .firtTitle {  width:100%; position:absolute; top:-5px; left:0; bottom:auto; right:0; padding:10px 10px 10px 10px;}
+.discontent .listjobs { overflow:hidden; padding-top:130px; padding-left:20px; text-align:center}
+.discontent .listjobs li { width:210px; height:210px; float:none; margin-right:0px; display:inline-block}
+#campus-block1 .listcontrol li { width:100%; margin:1% 0}
+.bxcol .bxleft { width:100%; float:none}
+.bxcol .bxright { width:100%; float:none; border:1px solid #CCC; padding:3%}
+
+.listPost li .postImg { float:none; width:100%; margin-bottom:3%}
+.listPost li .contPost { float:none; width:100%;}
+.listPost li .contPost .postTitle{ font-size:14px}
+}
+
+ @media screen and (max-width:480px) {
+	 .topbanner .formseach {float:left; overflow: hidden; padding-top:10px; padding-left:0%}
+	 .navbox li a { font-size:10px}
+	 }
