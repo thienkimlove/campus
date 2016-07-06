@@ -42,14 +42,21 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('admin/categories', 'CategoriesController');
     Route::resource('admin/questions', 'QuestionsController');
     Route::resource('admin/clients', 'ClientsController');
+    Route::resource('admin/cities', 'CitiesController');
+    Route::resource('admin/universities', 'UniversitiesController');
+    Route::resource('admin/clubs', 'ClubsController');
 
     #Frontend Routes
     Route::get('redirect', 'SocialAuthController@redirect');
     Route::get('callback', 'SocialAuthController@callback');
 
     Route::get('/', 'FrontendController@index');
+    Route::get('campus', 'FrontendController@campus');
+    Route::get('xml', 'FrontendController@xml');
     Route::get('search', 'FrontendController@search');
     Route::get('faq', 'FrontendController@question');
+    Route::get('chuyen-muc/{value}', 'FrontendController@category');
+    Route::get('club/{value}', 'FrontendController@club');
     Route::get('{value}', 'FrontendController@main');
 });
 

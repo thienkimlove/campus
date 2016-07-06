@@ -21,7 +21,7 @@
         <div class="inner-page">
             <h2 class="title">Sự kiện</h2>
             <div class="monthly" id="mycalendar"></div>
-            <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+            <div class="rowbt"> <a href="{{url('chuyen-muc','su-kien')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
         </div>
     </section>
 
@@ -43,28 +43,28 @@
                         <p>Esports là một lĩnh vực vô cùng rộng lớn với rất nhiều ngành nghề phong phú & đa dạng, từ những nghề liên quan trực tiếp tới Esports như tuyển thủ chuyên nghiệp, huấn luyện viên, quản lí đội tuyển Esports... hay những ngành nghề liên quan như truyền thông, marketing, kĩ thuật viên live-stream...<br><br>
 
                             Hãy cùng khám phá hệ thống ngành nghề Esports mà chúng tôi đã dày công xây dựng nên, tham khảo những case-study thú vị và khám phá tiềm năng của chính bản thân mình nhé!</p>
-                        <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+                        <div class="rowbt"> <a href="{{url('chuyen-muc', 'kham-pha-ban-than')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
                     </div>
                     <div id="tab2" class="tab-pane fade">
                         <h3>Học bổng</h3>
                         <p>Esports là một lĩnh vực vô cùng rộng lớn với rất nhiều ngành nghề phong phú & đa dạng, từ những nghề liên quan trực tiếp tới Esports như tuyển thủ chuyên nghiệp, huấn luyện viên, quản lí đội tuyển Esports... hay những ngành nghề liên quan như truyền thông, marketing, kĩ thuật viên live-stream...<br><br>
 
                             Hãy cùng khám phá hệ thống ngành nghề Esports mà chúng tôi đã dày công xây dựng nên, tham khảo những case-study thú vị và khám phá tiềm năng của chính bản thân mình nhé!</p>
-                        <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+                        <div class="rowbt"> <a href="{{url('chuyen-muc', 'hoc-bong')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
                     </div>
                     <div id="tab3" class="tab-pane fade">
                         <h3>Thực tập trong nước</h3>
                         <p>Esports là một lĩnh vực vô cùng rộng lớn với rất nhiều ngành nghề phong phú & đa dạng, từ những nghề liên quan trực tiếp tới Esports như tuyển thủ chuyên nghiệp, huấn luyện viên, quản lí đội tuyển Esports... hay những ngành nghề liên quan như truyền thông, marketing, kĩ thuật viên live-stream...<br><br>
 
                             Hãy cùng khám phá hệ thống ngành nghề Esports mà chúng tôi đã dày công xây dựng nên, tham khảo những case-study thú vị và khám phá tiềm năng của chính bản thân mình nhé!</p>
-                        <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+                        <div class="rowbt"> <a href="{{url('chuyen-muc', 'thuc-tap-trong-nuoc')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
                     </div>
                     <div id="tab4" class="tab-pane fade">
                         <h3>Thực tập ngoài nước</h3>
                         <p>Esports là một lĩnh vực vô cùng rộng lớn với rất nhiều ngành nghề phong phú & đa dạng, từ những nghề liên quan trực tiếp tới Esports như tuyển thủ chuyên nghiệp, huấn luyện viên, quản lí đội tuyển Esports... hay những ngành nghề liên quan như truyền thông, marketing, kĩ thuật viên live-stream...<br><br>
 
                             Hãy cùng khám phá hệ thống ngành nghề Esports mà chúng tôi đã dày công xây dựng nên, tham khảo những case-study thú vị và khám phá tiềm năng của chính bản thân mình nhé!</p>
-                        <div class="rowbt"> <a href="#" class="bt mb20px">Tìm hiểu thêm</a> </div>
+                        <div class="rowbt"> <a href="{{url('chuyen-muc', 'thuc-tap-ngoai-nuoc')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
                     </div>
                 </div>
             </div>

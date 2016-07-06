@@ -46,8 +46,8 @@
         <li><a href="#">Thành lập một CLB</a></li>
         <li><a href="#">Tham gia một CLB</a></li>
         <li><a href="#">Tham gia sự kiện</a></li>
-        <li><a href="#">Tìm học bổng</a></li>
-        <li><a href="#">Đọc tin tức</a></li>
+        <li><a href="{{url('chuyen-muc', 'hoc-bong')}}">Tìm học bổng</a></li>
+        <li><a href="{{url('chuyen-muc', 'tin-tuc')}}">Đọc tin tức</a></li>
         <li><a href="#">Thành lập một CLB</a></li>
     </ul>
     <a class="btface" href="#">Facebook</a>
@@ -71,10 +71,10 @@
     <div class="inner-page">
         <!-- Menu-->
         <ul class="navbox">
-            <li class="active"><a href="{{url('/')}}">Trang chủ</a></li>
-            <li><a href="{{url('campus')}}">Campus</a></li>
-            <li><a href="{{url('event')}}">Sự kiện</a></li>
-            <li><a href="{{url('orientation')}}">Hướng nghiệp</a></li>
+            <li class="{{($page == 'index') ? 'active' : ''}}"><a href="{{url('/')}}">Trang chủ</a></li>
+            <li class="{{($page == 'campus') ? 'active' : ''}}"><a href="{{url('campus')}}">Campus</a></li>
+            <li class="{{($page == 'su-kien') ? 'active' : ''}}"><a href="{{url('chuyen-muc','su-kien')}}">Sự kiện</a></li>
+            <li class="{{($page == 'huong-nghiep') ? 'active' : ''}}"><a href="{{url('chuyen-muc', 'huong-nghiep')}}">Hướng nghiệp</a></li>
         </ul>
     </div>
 </section>
@@ -98,10 +98,8 @@
 <script type="text/javascript">
     $(window).load( function() {
         $('#mycalendar').monthly({
-        });
-
-        $('#header_submit').click(function(){
-            $('form.formlogin').submit();
+            mode: 'event',
+            xmlUrl: '{{url('xml')}}'
         });
 
         $('#search_submit').click(function(){

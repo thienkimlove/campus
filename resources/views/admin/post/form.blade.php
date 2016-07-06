@@ -52,14 +52,26 @@
             </div>
 
 
+
+
             <div class="form-group">
                 {!! Form::label('status', 'Publish') !!}
                 {!! Form::checkbox('status', null, null) !!}
             </div>
 
+                <div class="form-group">
+                    {!! Form::label('event_start', 'Event Start (Optional)') !!}
+                    {!! Form::input('text','event_start', null,['class' => 'form-control', 'id' => 'event_start']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('event_end', 'Event End (Optional)') !!}
+                    {!! Form::input('text','event_end', null,['class' => 'form-control', 'id' => 'event_end']) !!}
+                </div>
 
 
-            <div class="form-group">
+
+                <div class="form-group">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
             </div>
 
@@ -69,4 +81,30 @@
 
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script>
+        $(document).ready(function(){
+            jQuery.datetimepicker.setLocale('vi');
+
+            jQuery('#event_start, #event_end').datetimepicker({
+                i18n:{
+                    vi:{
+                        months:[
+                            'Thang 1','Thang 2','Thang 3','Thang 4',
+                            'Thang 5','Thang 6','Thang 7','Thang 8',
+                            'Thang 9','Thang 10','Thang 11','Thang 12',
+                        ],
+                        dayOfWeek:[
+                            "Chu Nhat", "Thu 2", "Thu 3", "Thu 4",
+                            "Thu 5", "Thu 6", "Thu 7",
+                        ]
+                    }
+                },
+                timepicker:true,
+                format:'Y-m-d H:i:s'
+            });
+        });
+    </script>
 @endsection

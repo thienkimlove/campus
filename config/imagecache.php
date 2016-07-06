@@ -106,6 +106,22 @@ return array(
         '150x90' => function($image) {
             return $image->fit(150, 90);
         },
+
+        '650x226' => function($image) {
+            return $image->fit(650, 226);
+        },
+
+        '577x321' => function($image) {
+            return $image->fit(577, 321);
+        },
+
+        '282x157' => function($image) {
+            return $image->fit(282, 157);
+        },
+
+        '243x135' => function($image) {
+            return $image->fit(243, 135);
+        },
     ),
 
     /*

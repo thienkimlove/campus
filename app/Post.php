@@ -24,10 +24,15 @@ class Post extends Model implements SluggableInterface
         'content',
         'image',
         'status',
-        'views'
+        'views',
+        'club_id',
+        'user_id',
+        'approved_id',
+        'event_start',
+        'event_end',
     ];
 
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = ['created_at', 'updated_at', 'event_start', 'event_end'];
 
     /**
      * post belong to one category.
@@ -41,5 +46,14 @@ class Post extends Model implements SluggableInterface
     public function scopePublish($query)
     {
         $query->where('status', true);
+    }
+    
+    public function author()
+    {
+        if ($this->user_id) {
+            return User::find($this->user_id)->name;
+        } else {
+            return 'Admin';
+        }
     }
 }

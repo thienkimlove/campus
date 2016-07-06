@@ -56,6 +56,48 @@
                 </li>
 
                 <li>
+                    <a><i class="fa fa-files-o fa-fw"></i>Cities<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+
+                        <li>
+                            <a href="{{url('admin/cities')}}">List</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/cities/create')}}">Add</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a><i class="fa fa-files-o fa-fw"></i>Universities<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+
+                        <li>
+                            <a href="{{url('admin/universities')}}">List</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/universities/create')}}">Add</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a><i class="fa fa-files-o fa-fw"></i>Clubs<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+
+                        <li>
+                            <a href="{{url('admin/clubs')}}">List</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/clubs/create')}}">Add</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
                     <a><i class="fa fa-files-o fa-fw"></i>Question<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
 

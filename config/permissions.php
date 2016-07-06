@@ -33,6 +33,27 @@ return [
             'QuestionsController@destroy',
             'QuestionsController@update',
             'QuestionsController@store',
+
+            'CitiesController@index',
+            'CitiesController@create',
+            'CitiesController@edit',
+            'CitiesController@destroy',
+            'CitiesController@update',
+            'CitiesController@store',
+
+            'UniversitiesController@index',
+            'UniversitiesController@create',
+            'UniversitiesController@edit',
+            'UniversitiesController@destroy',
+            'UniversitiesController@update',
+            'UniversitiesController@store',
+
+            'ClubsController@index',
+            'ClubsController@create',
+            'ClubsController@edit',
+            'ClubsController@destroy',
+            'ClubsController@update',
+            'ClubsController@store',
         ]
     ],
 
@@ -68,6 +89,27 @@ return [
             'QuestionsController@destroy',
             'QuestionsController@update',
             'QuestionsController@store',
+
+            'CitiesController@index',
+            'CitiesController@create',
+            'CitiesController@edit',
+            'CitiesController@destroy',
+            'CitiesController@update',
+            'CitiesController@store',
+
+            'UniversitiesController@index',
+            'UniversitiesController@create',
+            'UniversitiesController@edit',
+            'UniversitiesController@destroy',
+            'UniversitiesController@update',
+            'UniversitiesController@store',
+
+            'ClubsController@index',
+            'ClubsController@create',
+            'ClubsController@edit',
+            'ClubsController@destroy',
+            'ClubsController@update',
+            'ClubsController@store',
         ]
     ]
 ];

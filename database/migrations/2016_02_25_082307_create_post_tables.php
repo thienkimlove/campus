@@ -25,7 +25,15 @@ class CreatePostTables extends Migration
                 ->onDelete('cascade');
             $table->string('image')->nullable()->default(null);
             $table->boolean('status')->default(true);           
-            $table->integer('views')->default(0);          
+            $table->integer('views')->default(0);      
+            
+            $table->integer('club_id')->unsigned()->nullable();   
+            $table->integer('user_id')->unsigned()->nullable();   
+            $table->integer('approved_id')->unsigned()->nullable();   
+            
+            $table->timestamp('event_start')->nullable();
+            $table->timestamp('event_end')->nullable();
+            
             $table->timestamps();
         });
     }

@@ -35,7 +35,7 @@ class PostsController extends AdminController
 
         $searchPost = '';
         $categoryId = '';
-        $posts = Post::latest('updated_at');
+        $posts = Post::whereNull('user_id')->latest('updated_at');
         if ($request->input('q')) {
             $searchPost = urldecode($request->input('q'));
             $posts = $posts->where('title', 'LIKE', '%'. $searchPost. '%');
