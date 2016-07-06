@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
+use App\Account;
 use App\User;
+use Auth;
+use Exception;
+use Laravel\Socialite\Facades\Socialite;
 use Validator;
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -29,11 +32,14 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/admin';
+    
+    protected $guard = 'backend';
+
+    protected $redirectAfterLogout = '/admin';
 
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -50,8 +56,8 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|email|max:255|unique:accounts',
+            'permission_id' => 'required'
         ]);
     }
 
@@ -63,10 +69,38 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Account::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'permission_id' => (int) $data['permission_id'],
         ]);
+    }
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            $authUser = Account::where('email', $user->email)->first();
+            if ($authUser) {
+                Auth::guard($this->guard)->login($authUser, true);
+                return redirect('admin');
+            } else {
+                return redirect('/');
+            }
+        } catch (Exception $e) {
+            return redirect('admin/login');
+        }
+
+    }
+
+    public function logout()
+    {
+        Auth::guard($this->guard)->logout();
+        return redirect('/');
     }
 }

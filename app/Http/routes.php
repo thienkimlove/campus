@@ -32,16 +32,18 @@ Route::get('restricted', function(){
 Route::group(['middleware' => 'web'], function () {
 
     #Admin Routes
+    Route::get('admin/login', 'AuthController@redirectToGoogle');
+    Route::get('admin/logout', 'AuthController@logout');
+    Route::get('admin/callback', 'AuthController@handleGoogleCallback');
 
-    Route::get('/admin', 'HomeController@index');
+
+    Route::get('admin', 'HomeController@index');   
     Route::resource('admin/posts', 'PostsController');
     Route::resource('admin/categories', 'CategoriesController');
     Route::resource('admin/questions', 'QuestionsController');
     Route::resource('admin/clients', 'ClientsController');
 
     #Frontend Routes
-
-    Route::auth();
     Route::get('redirect', 'SocialAuthController@redirect');
     Route::get('callback', 'SocialAuthController@callback');
 

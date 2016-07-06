@@ -34,9 +34,6 @@
            <form class="formlogin" role="form" method="POST" action="{{ url('/login') }}">
                {!! csrf_field() !!}
                 <p class="note-ac"> <span><img src="{{url('frontend/images/warm.png')}}"></span> </p>
-                <input name="email" type="text"  placeholder="Email" value="{{ old('email') }}" class="input">
-                <input name="password" type="password"  placeholder="Password" class="input">
-                <input name="submit" id="header_submit" type="button" value="Đăng nhập" class="bt">
                 <a href="{{url('redirect')}}" class="loginface"><img src="{{url('frontend/images/bt-loginface.png')}}"></a>
             </form>
         </div>

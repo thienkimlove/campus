@@ -3,25 +3,24 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
-class AdminAuthenticate
+class Permission
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     * @param  string|null  $guard
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('backend')->guest()) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('admin/login');
-            }
+        $action = last(explode('\\', request()->route()->getActionName()));
+
+        if (!Auth::guard('backend')->user()->missingPermission($action)) {
+            return redirect('/');
         }
 
         return $next($request);
