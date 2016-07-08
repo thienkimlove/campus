@@ -13,7 +13,8 @@
         "intervention/imagecache": "^2.3",
         "cviebrock/eloquent-sluggable": "^3.1",
         "laravelcollective/html": "^5.2",
-        "laravel/socialite": "^2.0"
+        "laravel/socialite": "^2.0",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
