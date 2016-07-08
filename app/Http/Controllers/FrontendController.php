@@ -58,10 +58,11 @@ class FrontendController extends Controller
     
     public function search(Request $request) 
     {
+        $page = 'search';
         if ($request->input('q')) {
             $keyword = $request->input('q');
             $clubs = Club::where('name', 'LIKE', '%' . $keyword . '%')->paginate(10);
-            return view('frontend.search', compact('clubs', 'keyword'));
+            return view('frontend.search', compact('clubs', 'keyword', 'page'));
         }
     }
 
