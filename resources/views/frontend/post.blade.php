@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="postcont">
-              {!! $post->content !!}}
+              {!! $post->content !!}
             </div>
             <div class="commentpage">
                 <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5"></div>
