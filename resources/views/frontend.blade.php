@@ -34,7 +34,11 @@
            <form class="formlogin" role="form" method="POST" action="{{ url('/login') }}">
                {!! csrf_field() !!}
                 <p class="note-ac"> <span><img src="{{url('frontend/images/warm.png')}}"></span> </p>
-                <a href="{{url('redirect')}}" class="loginface"><img src="{{url('frontend/images/bt-loginface.png')}}"></a>
+               @if (auth()->check())
+                   Xin chào, {{auth()->user()->name }}
+               @else
+                   <a href="{{url('redirect')}}" class="loginface"><img src="{{url('frontend/images/bt-loginface.png')}}"></a>
+               @endif
             </form>
         </div>
     </div>
