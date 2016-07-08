@@ -70,8 +70,7 @@
                         <h2 class="acticle">{{$rightClub->university->name}}</h2>
                         <p class="discript">CLB: {{$rightClub->name}}</p>
                         <div>
-                            <h6><img src="{{url('img/cache/650x226/'. $rightClub->image)}}"></h6>
-                            Image : {{$rightClub->image}}
+                            <h6><img src="{{url('img/cache/650x226', $rightClub->image)}}"></h6>
                             <div>{!! $rightClub->desc !!}</div>
                             <div class="rowbt"> <a href="{{url('club', $rightClub->slug)}}" class="bt mb20px">Ghé thăm chúng tôi</a> </div>
                         </div>
