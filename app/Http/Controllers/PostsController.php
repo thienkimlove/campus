@@ -82,6 +82,12 @@ class PostsController extends AdminController
         if ($request->file('image') && $request->file('image')->isValid()) {
             $data['image'] = $this->saveImage($request->file('image'), $post->image);
         }
+        if (!$data['event_start']) {
+            unset($data['event_start']);
+        }
+        if (!$data['event_end']) {
+            unset($data['event_end']);
+        }
         $data['status'] = ($request->input('status') == 'on') ? true : false;
         $post->update($data);
         flash('Update post success!', 'success');
