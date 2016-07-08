@@ -76,7 +76,7 @@
             <h2 class="title">Đối tác</h2>
             <ul class="clientList">
                 @foreach ($clients as $client)
-                    <li><img src="{{url('img/cache/150x90', $client->image)}}">{{$client->name}}</li>
+                    <li><img src="{{url('img/cache/150x90', $client->image)}}"></li>
                 @endforeach
             </ul>
         </div>
