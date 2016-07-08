@@ -21,6 +21,14 @@
     <link rel="stylesheet" href="{{url('frontend/css/monthly.css')}}">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId={{env('FACEBOOK_APP_ID')}}";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <!-- topnav-->
 <!-- menu mobile-->
 <div class="wsmenucontent overlapblackbg"></div>
@@ -63,7 +71,7 @@
         <div class="bxsearch">
             <a href="#" class="creatclb"><img src="{{url('frontend/images/creat-clb.png')}}"></a>
             <a href="#" class="searchclb"><img src="{{url('frontend/images/search-clb.png')}}"></a>
-            <form class="formseach" method="GET" action="{{url('search')}}">
+            <form class="formseach" id="search_form" method="GET" action="{{url('search')}}">
                 {!! csrf_field() !!}
                 <input name="q" type="text" placeholder="Tìm kiếm" class="inputsearch">
                 <input name="submit" id="search_submit" type="button"  class="btsearch">
@@ -107,7 +115,7 @@
         });
 
         $('#search_submit').click(function(){
-            $('form.formseach').submit();
+            $('#search_form').submit();
         });
     });
 </script>

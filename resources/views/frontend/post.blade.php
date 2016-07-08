@@ -14,13 +14,18 @@
                     <p class="time"> By {{($post->author())}} | {{$post->updated_at->toDayDateTimeString()}} </p>
                 </div>
                 <div class="boxshare">
-                    <img src="{{url('frontend/update-images/social.jpg')}}"> </div>
+                    <div class="fb-share-button"
+                         data-href="{{url($post->slug.'.html')}}"
+                         data-layout="button_count">
+                    </div>
+                </div>
             </div>
             <div class="postcont">
               {!! $post->content !!}}
             </div>
             <div class="commentpage">
-                <img src="{{url('frontend/update-images/plugin-comt.png')}}"> </div>
+                <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5"></div>
+            </div>
         </div>
     </div>
 </section>
