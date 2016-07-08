@@ -94,18 +94,24 @@ class FrontendController extends Controller
 
         }
 
-        if ($page == 'su-kien') {
+        if ($value == 'su-kien') {
 
             $newsCategories = Category::where('slug', 'tin-tuc')->first();
 
             return view('frontend.event', compact(
                 'category', 'posts', 'page', 'newsCategories'
             ));
-        }
+        } else if ($value == 'huong-nghiep') {
 
-        return view('frontend.orientation', compact(
-            'category', 'posts', 'page'
-        ));
+            return view('frontend.orientation', compact(
+                'category', 'posts', 'page'
+            ));
+
+        }  else {
+            return view('frontend.category', compact(
+                'category', 'posts', 'page'
+            ));
+        }       
     }
 
     public function xml()
