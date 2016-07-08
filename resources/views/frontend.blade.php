@@ -55,12 +55,12 @@
 <div class="pennelRight">
     <h2>Tôi muốn</h2>
     <ul class="listtext">
-        <li><a href="#">Thành lập một CLB</a></li>
-        <li><a href="#">Tham gia một CLB</a></li>
-        <li><a href="#">Tham gia sự kiện</a></li>
+        {{--<li><a href="#">Thành lập một CLB</a></li>
+        <li><a href="#">Tham gia một CLB</a></li>--}}
+        <li><a href="{{url('chuyen-muc', 'su-kien')}}">Tham gia sự kiện</a></li>
         <li><a href="{{url('chuyen-muc', 'hoc-bong')}}">Tìm học bổng</a></li>
         <li><a href="{{url('chuyen-muc', 'tin-tuc')}}">Đọc tin tức</a></li>
-        <li><a href="#">Thành lập một CLB</a></li>
+        {{--<li><a href="#">Thành lập một CLB</a></li>--}}
     </ul>
     <a class="btface" href="#">Facebook</a>
 </div>
