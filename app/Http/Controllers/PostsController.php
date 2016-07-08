@@ -63,6 +63,12 @@ class PostsController extends AdminController
         $data = $request->all();
         $data['image'] =  ($request->file('image') && $request->file('image')->isValid()) ? $this->saveImage($request->file('image')) : '';
         $data['status'] = ($request->input('status') == 'on') ? true : false;
+        if (!$data['event_start']) {
+            $data['event_start'] = null;
+        }
+        if (!$data['event_end']) {
+            $data['event_end'] = null;
+        }
         Post::create($data);
         flash('Create post success!', 'success');
         return redirect('admin/posts');
@@ -83,10 +89,10 @@ class PostsController extends AdminController
             $data['image'] = $this->saveImage($request->file('image'), $post->image);
         }
         if (!$data['event_start']) {
-            unset($data['event_start']);
+            $data['event_start'] = null;
         }
         if (!$data['event_end']) {
-            unset($data['event_end']);
+            $data['event_end'] = null;
         }
         $data['status'] = ($request->input('status') == 'on') ? true : false;
         $post->update($data);
