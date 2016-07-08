@@ -5,7 +5,7 @@
         <div class="pagecurrent">
             <a href="{{url('/')}}">Trang chủ </a> /
             <a href="{{url('chuyen-muc', $post->category->slug)}}">{{$post->category->name}}</a> /
-            <a href="{{url($post->slug.'.html')}}">{{$post->title}}</a>
+            <a href="{{url($post->slug.'.html')}}"> Bài viết</a> / {{$post->title}}
         </div>
         <div class="postdetail">
             <div class="acticle">
