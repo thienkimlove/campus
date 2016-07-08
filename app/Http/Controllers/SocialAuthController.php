@@ -24,4 +24,10 @@ class SocialAuthController extends Controller
 
         return redirect()->to('/');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/');
+    }
 }

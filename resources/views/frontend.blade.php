@@ -35,7 +35,7 @@
                {!! csrf_field() !!}
                 <p class="note-ac"> <span><img src="{{url('frontend/images/warm.png')}}"></span> </p>
                @if (auth()->check())
-                   Xin chào, {{auth()->user()->name }}
+                   Xin chào, {{auth()->user()->name }}, <a href="{{url('logout')}}">Logout</a>
                @else
                    <a href="{{url('redirect')}}" class="loginface"><img src="{{url('frontend/images/bt-loginface.png')}}"></a>
                @endif

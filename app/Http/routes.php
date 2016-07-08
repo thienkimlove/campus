@@ -49,6 +49,7 @@ Route::group(['middleware' => 'web'], function () {
     #Frontend Routes
     Route::get('redirect', 'SocialAuthController@redirect');
     Route::get('callback', 'SocialAuthController@callback');
+    Route::get('logout', 'SocialAuthController@logout');
 
     Route::get('/', 'FrontendController@index');
     Route::get('campus', 'FrontendController@campus');
