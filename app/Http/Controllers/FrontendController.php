@@ -22,7 +22,8 @@ class FrontendController extends Controller
     {
         $page = 'index';
         $clients  = Client::all();
-        return view('frontend.index', compact('page', 'clients'));
+        $orientationCategory = Category::where('slug', 'huong-nghiep')->first();
+        return view('frontend.index', compact('page', 'clients', 'orientationCategory'));
     }
 
     public function campus()
