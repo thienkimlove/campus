@@ -9,6 +9,7 @@ use App\Client;
 use App\Club;
 use App\Post;
 use App\Question;
+use App\University;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -28,22 +29,22 @@ class FrontendController extends Controller
     {
         $page = 'campus';
         $cities = City::all();
-        $rightClub = Club::where('status', true)->first();
+        $rightClubs = Club::where('status', true)->get();
+
+        $category = Category::where('slug', 'campus')->get();
+        $categoryId = null;
+        if ($category->count() > 0) {
+            $categoryId = $category->first();
+        }
+        $posts = null;
+        if ($categoryId) {
+            $posts = Post::where('category_id', $categoryId)->latest('updated_at')->limit(4)->get();
+        }
 
         $questions = Question::all();
         
-        return view('frontend.campus', compact('cities', 'page', 'rightClub', 'questions'));
+        return view('frontend.campus', compact('cities', 'page', 'rightClubs', 'questions', 'posts'));
     }
-
-    public function club($value)
-    {
-        $page = 'club';
-        $cities = City::all();
-        $club = Club::whereSlug($value)->first();
-
-        return view('frontend.club', compact('cities', 'page', 'club'));
-    }
-
 
     public function saveQuestion(Request $request)
     {
@@ -59,10 +60,26 @@ class FrontendController extends Controller
     public function search(Request $request) 
     {
         $page = 'search';
+
+        $cities = City::all();
+
         if ($request->input('q')) {
-            $keyword = $request->input('q');
-            $clubs = Club::where('name', 'LIKE', '%' . $keyword . '%')->paginate(10);
-            return view('frontend.search', compact('clubs', 'keyword', 'page'));
+            $clubs = Club::where('name', 'LIKE', '%' . $request->input('q') . '%')->paginate(10);
+            return view('frontend.search', compact('clubs', 'cities', 'page'));
+        } else if ($request->input('uni')) {
+
+            $university = University::where('slug', $request->input('uni'))->get();
+
+            if ($university->count() > 0) {
+
+                $clubs = Club::where('university_id', $university->first()->id)->paginate(10);
+
+                return view('frontend.search', compact('clubs', 'page', 'cities'));
+            }
+        } else {
+            $clubs = Club::latest('updated_at')->paginate(10);
+
+            return view('frontend.search', compact('clubs', 'page', 'cities'));
         }
     }
 
@@ -104,8 +121,10 @@ class FrontendController extends Controller
             ));
         } else if ($value == 'huong-nghiep') {
 
+            $jobCategory = Category::where('slug', 'job')->first();
+
             return view('frontend.orientation', compact(
-                'category', 'posts', 'page'
+                'category', 'posts', 'page', 'jobCategory'
             ));
 
         }  else {
@@ -149,18 +168,11 @@ class FrontendController extends Controller
             $page = $post->category->slug;
             return view('frontend.post', compact('post', 'page'));
         } else {
+            $page = 'club';
+            $cities = City::all();
+            $club = Club::whereSlug($value)->get();
 
-            $club =  Club::where('slug', $value)->first();
-
-            $posts = Post::publish()
-                ->where('club_id', $club->id)
-                ->latest('updated_at')
-                ->paginate(10);
-
-            $page = $club->slug;
-            return view('frontend.club', compact(
-                'club', 'posts', 'page'
-            ));
+            return view('frontend.club', compact('cities', 'page', 'club'));
 
         }
     }

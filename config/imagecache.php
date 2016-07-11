@@ -122,6 +122,18 @@ return array(
         '243x135' => function($image) {
             return $image->fit(243, 135);
         },
+
+        '52x52' => function($image) {
+            return $image->fit(52, 52);
+        },
+
+        '85x65' => function($image) {
+            return $image->fit(85, 65);
+        },
+
+        '112x114' => function($image) {
+            return $image->fit(112, 114);
+        },
     ),
 
     /*

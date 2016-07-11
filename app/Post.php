@@ -30,6 +30,7 @@ class Post extends Model implements SluggableInterface
         'approved_id',
         'event_start',
         'event_end',
+        'external_link'
     ];
 
     protected $dates = ['created_at', 'updated_at', 'event_start', 'event_end'];

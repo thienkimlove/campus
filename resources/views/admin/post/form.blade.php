@@ -69,6 +69,11 @@
                     {!! Form::input('text','event_end', null,['class' => 'form-control', 'id' => 'event_end']) !!}
                 </div>
 
+                <div class="form-group">
+                    {!! Form::label('external_link', 'External Link (Optional)') !!}
+                    {!! Form::text('external_link', null, ['class' => 'form-control']) !!}
+                </div>
+
 
 
                 <div class="form-group">

@@ -36,6 +36,7 @@ class CategoriesController extends AdminController
             'name' => $request->input('name'),
             'desc' => $request->input('desc'),
             'parent_id' => ($request->input('parent_id') == 0) ? null : $request->input('parent_id'),
+            'image' =>  ($request->file('image') && $request->file('image')->isValid()) ? $this->saveImage($request->file('image')) : ''
         ]);
 
         flash('Create category success!', 'success');
@@ -70,6 +71,10 @@ class CategoriesController extends AdminController
             'desc' => $request->input('desc'),
             'parent_id' => ($request->input('parent_id') == 0) ? null : $request->input('parent_id'),
         ];
+
+        if ($request->file('image') && $request->file('image')->isValid()) {
+            $data['image'] = $this->saveImage($request->file('image'), $category->image);
+        }
 
         $category->update($data);
 
