@@ -90,6 +90,15 @@ class FrontendController extends Controller
         return view('frontend.question', compact('questions', 'page'));
     }
 
+    public function club($value)
+    {
+        $page = 'club';
+        $cities = City::all();
+        $club = Club::whereSlug($value)->get();
+
+        return view('frontend.club', compact('cities', 'page', 'club'));
+    }
+
     public function category($value)
     {
         $category = Category::where('slug', $value)->first();
@@ -167,13 +176,6 @@ class FrontendController extends Controller
             $post->update(['views' => (int) $post->views + 1]);
             $page = $post->category->slug;
             return view('frontend.post', compact('post', 'page'));
-        } else {
-            $page = 'club';
-            $cities = City::all();
-            $club = Club::whereSlug($value)->get();
-
-            return view('frontend.club', compact('cities', 'page', 'club'));
-
         }
     }
 }
