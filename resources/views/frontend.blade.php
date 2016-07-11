@@ -59,13 +59,11 @@
             mode: 'event',
             xmlUrl: '{{url('xml')}}'
         });
-    });
-    $(document).ready(function(){
         $('#search_submit').click(function(){
-            console.log('button click');
-            $('#search_form').submit();
+            window.location.href =  '/search?q=' + encodeURI($('#search_value').val());
         });
     });
+
 </script>
 </body>
 </html>

@@ -46,8 +46,8 @@
                 <img src="{{url('frontend/images/search-clb.png')}}">
             </a>
 
-            <form class="formseach" id="search_form" method="GET" action="{{url('search')}}">
-                <input name="q" type="text" placeholder="Tìm kiếm" class="inputsearch">
+            <form class="formseach"  method="GET" action="{{url('search')}}">
+                <input name="q" id="search_value" type="text" placeholder="Tìm kiếm" class="inputsearch">
                 <input name="submit" id="search_submit" type="button"  class="btsearch">
             </form>
         </div>
