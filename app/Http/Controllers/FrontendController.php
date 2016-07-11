@@ -94,9 +94,9 @@ class FrontendController extends Controller
     {
         $page = 'club';
         $cities = City::all();
-        $club = Club::whereSlug($value)->get();
+        $clubs = Club::whereSlug($value)->get();
 
-        return view('frontend.club', compact('cities', 'page', 'club'));
+        return view('frontend.club', compact('cities', 'page', 'clubs'));
     }
 
     public function category($value)
