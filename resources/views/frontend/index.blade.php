@@ -40,7 +40,7 @@
                 </ul>
                 <div class="tab-content">
                     @foreach ($orientationCategory->subCategories as $k => $oSub)
-                    <div id="tab1" class="{{ ($k == 0) ? 'tab-pane fade in active' : 'tab-pane fade' }}">
+                    <div id="tab{{$k + 1}}" class="{{ ($k == 0) ? 'tab-pane fade in active' : 'tab-pane fade' }}">
                         <h3>{{$oSub->name}}</h3>
                         <p>{{$oSub->desc}}</p>
                         <div class="rowbt"> <a href="{{url('chuyen-muc', $oSub->slug)}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
