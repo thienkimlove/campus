@@ -59,8 +59,10 @@
             mode: 'event',
             xmlUrl: '{{url('xml')}}'
         });
-
+    });
+    $(document).ready(function(){
         $('#search_submit').click(function(){
+            console.log('button click');
             $('#search_form').submit();
         });
     });
