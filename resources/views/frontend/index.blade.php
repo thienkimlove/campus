@@ -33,7 +33,7 @@
             <div class="cartabs">
                 <ul class="nav nav-pills">
                     @foreach ($orientationCategory->subCategories as $k => $oSub)
-                    <li class="active">
+                    <li class="{{($k == 0) ? 'active' : ''}}">
                         <a data-toggle="pill" href="#tab{{$k + 1}}"><p><img src="{{url('img/cache/112x114', $oSub->image)}}"></p> <p class="txt">{{$oSub->name}}</p></a></li>
                     @endforeach
 
