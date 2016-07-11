@@ -6,7 +6,7 @@
         <div class="inner-page">
             <h2 class="title">Cơ hội cho sinh viên</h2>
             <ul class="listchance">
-                @foreach ($category->subCategories->limit(3) as $mSub)
+                @foreach ($category->subCategories->splice(0, 3) as $mSub)
                 <li>
                     <div class="conttext">
                         <img src="{{url('img/cache/112x114', $mSub->image)}}">
