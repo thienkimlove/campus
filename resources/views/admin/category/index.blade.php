@@ -17,6 +17,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Image</th>
                                 <th>Is Child</th>
                                 <th>Action</th>
                             </tr>
@@ -26,6 +27,11 @@
                                 <tr>
                                     <td>{{$cate->id}}</td>
                                     <td><a href="{{url('admin/posts/?cat='. $cate->id)}}">{{$cate->name}}</a></td>
+                                    <td>
+                                        @if ($cate->image)
+                                            <img src="{{url('img/cache/120x120', $cate->image)}}" />
+                                        @endif
+                                    </td>
                                     <td>{{ ($cate->parent_id)? 'Yes' : 'No'  }}</td>
                                     <td>
                                         <button id-attr="{{$cate->id}}" class="btn btn-primary btn-sm edit-cate" type="button">Edit</button>&nbsp;
