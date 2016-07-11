@@ -4,7 +4,7 @@
 
     <!-- Tím kiếm cau lac bộ-->
 
-   @include('frontend.club_list', ['cities' => $cities, 'rightClubs' => $rightClubs])
+   @include('frontend.club_list', ['cities' => $cities, 'rightClubs' => $clubs])
 
 
 @endsection
