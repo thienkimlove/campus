@@ -47,7 +47,6 @@
             </a>
 
             <form class="formseach" id="search_form" method="GET" action="{{url('search')}}">
-                {!! csrf_field() !!}
                 <input name="q" type="text" placeholder="Tìm kiếm" class="inputsearch">
                 <input name="submit" id="search_submit" type="button"  class="btsearch">
             </form>
