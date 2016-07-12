@@ -54,6 +54,13 @@ return [
             'ClubsController@destroy',
             'ClubsController@update',
             'ClubsController@store',
+
+            'LinksController@index',
+            'LinksController@create',
+            'LinksController@edit',
+            'LinksController@destroy',
+            'LinksController@update',
+            'LinksController@store',
         ]
     ],
 
@@ -110,6 +117,13 @@ return [
             'ClubsController@destroy',
             'ClubsController@update',
             'ClubsController@store',
+
+            'LinksController@index',
+            'LinksController@create',
+            'LinksController@edit',
+            'LinksController@destroy',
+            'LinksController@update',
+            'LinksController@store',
         ]
     ]
 ];
