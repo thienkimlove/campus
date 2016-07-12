@@ -45,6 +45,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('admin/cities', 'CitiesController');
     Route::resource('admin/universities', 'UniversitiesController');
     Route::resource('admin/clubs', 'ClubsController');
+    Route::resource('admin/links', 'LinksController');
 
     #Frontend Routes
     Route::get('redirect', 'SocialAuthController@redirect');

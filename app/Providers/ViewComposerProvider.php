@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Category;
-use App\Post;
+use App\Link;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposerProvider extends ServiceProvider
@@ -15,18 +14,9 @@ class ViewComposerProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Using class based composers...
-        view()->composer(
-            'profile', 'App\Http\ViewComposers\ProfileComposer'
-        );
 
-        // Using Closure based composers...
-        view()->composer('dashboard', function ($view) {
-            //
-        });
-
-        view()->composer('example.composer', function ($view) {
-            $view->with('latestPosts',  Post::latest()->limit(6)->get());
+        view()->composer('frontend.links', function ($view) {
+            $view->with('links',  Link::all());
         });
 
     }

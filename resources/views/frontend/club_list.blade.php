@@ -28,7 +28,7 @@
                         <div>
                             <h6><img src="{{url('img/cache/650x226', $rightClub->image)}}"></h6>
                             <div>{!! $rightClub->desc !!}</div>
-                            <div class="rowbt"> <a href="{{url('club', $rightClub->slug)}}" class="bt mb20px">Ghé thăm chúng tôi</a> </div>
+                            {{--<div class="rowbt"> <a href="{{url('club', $rightClub->slug)}}" class="bt mb20px">Ghé thăm chúng tôi</a> </div>--}}
                         </div>
                     </div>
                 @endforeach
