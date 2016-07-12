@@ -62,16 +62,16 @@ class FrontendController extends Controller
     {
         $page = 'search';
 
-        $cities = City::all();
-
         if ($request->input('q')) {
 
             $posts = Post::where('title', 'LIKE', '%' . $request->input('q') . '%')->paginate(10);
 
-            return view('frontend.search_post', compact('posts', 'cities', 'page'));
+            return view('frontend.search_post', compact('posts', 'page'));
 
 
         } else if ($request->input('uni')) {
+
+            $cities = City::all();
 
             $university = University::where('slug', $request->input('uni'))->get();
 
@@ -82,6 +82,8 @@ class FrontendController extends Controller
                 return view('frontend.search_club', compact('clubs', 'page', 'cities'));
             }
         } else {
+
+            $cities = City::all();
 
             $clubs = Club::latest('updated_at')->paginate(10);
 
