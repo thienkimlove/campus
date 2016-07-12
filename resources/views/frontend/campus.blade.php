@@ -10,9 +10,11 @@
                 <iframe width="560" height="315" src="{{config('constants.VIDEO_URL')}}" frameborder="0" allowfullscreen></iframe>
             </div>
             <ul class="listcontrol">
+                {{$posts->count()}}
                 @foreach ($posts as $iPost)
                 <li>
-                    <div class=" contblock bgorang"> <img src="{{url('img/cache/52x52', $iPost->image)}}">
+                    <div class=" contblock bgorang">
+                        <img src="{{url('img/cache/52x52', $iPost->image)}}">
                         <h2><a href="{{url($iPost->slug.'.html')}}">{{$iPost->title}}</a></h2>
                         <p>{{$iPost->desc}}</p>
                     </div>
