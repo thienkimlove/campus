@@ -4,6 +4,7 @@
 <!-- top news-->
 <section id="mainevent" class="blockrows bgblock">
     <div class="inner-page">
+        <h3 class="title">Tìm kiếm bài viết theo từ khóa : <b>{{$keyword}}</b></h3>
         <div class="bxevent bxcol">
             <div class="bxleft">
                 <ul class="tabnews nav nav-tabs">

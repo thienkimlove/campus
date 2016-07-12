@@ -64,11 +64,13 @@ class FrontendController extends Controller
 
         if ($request->input('q')) {
 
+            $keyword = $request->input('q');
+
             $newsCategories = Category::where('slug', 'tin-tuc')->first();
 
             $posts = Post::where('title', 'LIKE', '%' . $request->input('q') . '%')->paginate(10);
 
-            return view('frontend.search_post', compact('posts', 'newsCategories', 'page'));
+            return view('frontend.search_post', compact('posts', 'newsCategories', 'keyword', 'page'));
 
 
         } else if ($request->input('uni')) {
