@@ -35,7 +35,7 @@ class FrontendController extends Controller
         $category = Category::where('slug', 'campus')->get();
         $categoryId = null;
         if ($category->count() > 0) {
-            $categoryId = $category->first();
+            $categoryId = $category->first()->id;
         }
         $posts = null;
         if ($categoryId) {
