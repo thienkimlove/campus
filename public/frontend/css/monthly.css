@@ -441,3 +441,42 @@
 		box-sizing: border-box;
 	}
 }
+
+/* add by HUng */
+
+.monthly-event-list{
+	margin-top :18px !important;
+}
+.monthly-cat{
+	height:18px !important;
+	width: 18px !important;
+}
+
+.monthly-cat div{
+	height:13px !important;
+	width: 16px !important;
+}
+
+.monthly-reset {
+
+	width: 20px !important;
+	height: 20px !important;
+
+
+}
+.monthly-reset:after {
+
+	border: 5px solid transparent !important;
+	border-left: 5px solid #222 !important;
+	border-bottom: 5px solid #222 !important;
+	left: 10px !important;
+	top: 8px !important;
+}
+.monthly-reset:before {
+
+	border: 4px solid transparent !important;
+	border-left: 10px solid #f18d05 !important;
+	border-bottom: 10px solid #f18d05 !important;
+	left: 4px !important;
+	top: 13px !important;
+}
