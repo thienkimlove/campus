@@ -4,7 +4,6 @@
 <!-- top news-->
 <section id="mainevent" class="blockrows bgblock">
     <div class="inner-page">
-        <h2 class="title">Tiêu điểm sự kiện</h2>
         <div class="bxevent bxcol">
             <div class="bxleft">
                 <ul class="tabnews nav nav-tabs">
