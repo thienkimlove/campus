@@ -18,12 +18,12 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="rowbt"> <a href="#" class="bt">Đăng ký câu lạc bộ mới</a> </div>
+                <div class="rowbt"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0V8xitynwanFGL3BWbwOpezwOn6lvEr7mr0o0EJQ2RQF27w/viewform" class="bt">Đăng ký câu lạc bộ mới</a> </div>
             </div>
             <div class="bxright">
                 @foreach ($rightClubs  as $rightClub)
                     <div class="midcont">
-                        <h2 class="acticle">{{$rightClub->university->name}}</h2>
+                        <h2 class="acticle">{{ isset($rightClub->university_name)  ? $rightClub->university_name : $rightClub->university->name }}</h2>
                         <p class="discript">CLB: {{$rightClub->name}}</p>
                         <div>
                             <h6><img src="{{url('img/cache/650x226', $rightClub->image)}}"></h6>

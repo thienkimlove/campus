@@ -29,6 +29,11 @@
                 {!! Form::textarea('desc', null, ['class' => 'form-control']) !!}
             </div>
 
+                <div class="form-group">
+                    {!! Form::label('index_desc', 'Index Description (Optional)') !!}
+                    {!! Form::textarea('index_desc', null, ['class' => 'form-control']) !!}
+                </div>
+
 
 
             <div class="form-group">

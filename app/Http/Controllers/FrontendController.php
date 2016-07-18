@@ -11,8 +11,10 @@ use App\Post;
 use App\Question;
 use App\University;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Cache;
 
 
 class FrontendController extends Controller
@@ -21,29 +23,59 @@ class FrontendController extends Controller
     public function index()
     {
         $page = 'index';
-        $clients  = Client::all();
-        $orientationCategory = Category::where('slug', 'huong-nghiep')->first();
-        return view('frontend.index', compact('page', 'clients', 'orientationCategory'));
+
+        $clients = Cache::remember('index_client', 10, function() {
+            return DB::table('clients')->get();
+        });
+
+
+        $subOrientationCategories = Cache::remember('index_sub_orientation_categories', 10, function()  {
+
+            $orientationCategoryId = Category::where('slug', 'huong-nghiep')->first()->id;
+
+            return DB::table('categories')->where('parent_id', $orientationCategoryId)->get();
+
+        });
+
+        return view('frontend.index', compact('page', 'clients', 'subOrientationCategories'));
     }
 
     public function campus()
     {
         $page = 'campus';
-        $cities = City::all();
-        $rightClubs = Club::where('status', true)->get();
 
-        $category = Category::where('slug', 'campus')->get();
-        $categoryId = null;
-        if ($category->count() > 0) {
-            $categoryId = $category->first()->id;
-        }
-        $posts = null;
-        if ($categoryId) {
-            $posts = Post::where('category_id', $categoryId)->latest('updated_at')->limit(4)->get();
+        $cities = Cache::remember('campus_cities', 10, function() {
+            return DB::table('cities')->get();
+        });
+
+        $universities = Cache::remember('campus_universities', 10, function() {
+            return DB::table('universities')->get();
+        });
+
+        foreach ($cities as $city) {
+            $city->universities = array_where($universities, function ($key, $value) use($city) {
+                return $value->city_id == $city->id;
+            });
         }
 
-        $questions = Question::all();
-        
+        $rightClubs = Cache::remember('campus_right_clubs', 10, function() {
+            return DB::table('clubs')
+                ->join('universities', 'clubs.university_id', '=', 'universities.id')
+                ->where('clubs.status', true)
+                ->select('clubs.*', 'universities.name as university_name')
+                ->get();
+        });
+
+
+        $questions = Cache::remember('campus_questions', 10, function() {
+            return DB::table('questions')->get();
+        });
+
+        $posts = Cache::remember('campus_posts', 10, function() {
+            $category = Category::where('slug', 'campus')->first()->id;
+            return DB::table('posts')->where('category_id', $category)->orderBy('updated_at', 'desc')->limit(4)->get();
+        });
+
         return view('frontend.campus', compact('cities', 'page', 'rightClubs', 'questions', 'posts'));
     }
 
@@ -62,20 +94,36 @@ class FrontendController extends Controller
     {
         $page = 'search';
 
+        $cities = Cache::remember('search_cities', 10, function() {
+            return DB::table('cities')->get();
+        });
+
+        $universities = Cache::remember('campus_universities', 10, function() {
+            return DB::table('universities')->get();
+        });
+
+        foreach ($cities as $city) {
+            $city->universities = array_where($universities, function ($key, $value) use($city) {
+                return $value->city_id == $city->id;
+            });
+        }
+
+
         if ($request->input('q')) {
 
             $keyword = $request->input('q');
 
-            $newsCategories = Category::where('slug', 'tin-tuc')->first();
+            if (is_string($keyword)) {
 
-            $posts = Post::where('title', 'LIKE', '%' . $request->input('q') . '%')->paginate(10);
+                $newsCategories = Category::where('slug', 'tin-tuc')->first();
 
-            return view('frontend.search_post', compact('posts', 'newsCategories', 'keyword', 'page'));
+                $posts = Post::where('title', 'LIKE', '%' . $request->input('q') . '%')->paginate(10);
 
+                return view('frontend.search_post', compact('posts', 'newsCategories', 'keyword', 'page'));
+            }
 
         } else if ($request->input('uni')) {
 
-            $cities = City::all();
 
             $university = University::where('slug', $request->input('uni'))->get();
 
@@ -86,9 +134,6 @@ class FrontendController extends Controller
                 return view('frontend.search_club', compact('clubs', 'page', 'cities'));
             }
         } else {
-
-            $cities = City::all();
-
             $clubs = Club::latest('updated_at')->paginate(10);
 
             return view('frontend.search_club', compact('clubs', 'page', 'cities'));
@@ -105,7 +150,9 @@ class FrontendController extends Controller
     public function club($value)
     {
         $page = 'club';
-        $cities = City::all();
+        $cities = Cache::remember('club_cities', 10, function() {
+            return DB::table('cities')->get();
+        });
         $clubs = Club::whereSlug($value)->get();
 
         return view('frontend.club', compact('cities', 'page', 'clubs'));
@@ -184,10 +231,14 @@ class FrontendController extends Controller
     public function main($value)
     {
         if (preg_match('/([a-z0-9\-]+)\.html/', $value, $matches)) {
-            $post = Post::where('slug', $matches[1])->first();
-            $post->update(['views' => (int) $post->views + 1]);
-            $page = $post->category->slug;
-            return view('frontend.post', compact('post', 'page'));
+            $post = Post::where('slug', $matches[1])->get();
+            if ($post->count() > 0) {
+                $post = $post->first();
+                $post->update(['views' => (int) $post->views + 1]);
+                $page = $post->category->slug;
+                return view('frontend.post', compact('post', 'page'));
+            }
+
         }
     }
 }

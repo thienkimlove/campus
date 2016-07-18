@@ -22,7 +22,8 @@ class Category extends Model implements SluggableInterface
         'parent_id',
         'slug',
         'desc',
-        'image'
+        'image',
+        'index_desc'
     ];
 
     /**

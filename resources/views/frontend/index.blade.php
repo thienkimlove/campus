@@ -32,18 +32,18 @@
             <h2 class="title">Hướng nghiệp</h2>
             <div class="cartabs">
                 <ul class="nav nav-pills">
-                    @foreach ($orientationCategory->subCategories as $k => $oSub)
+                    @foreach ($subOrientationCategories as $k => $oSub)
                     <li class="{{($k == 0) ? 'active' : ''}}">
                         <a data-toggle="pill" href="#tab{{$k + 1}}"><p><img src="{{url('img/cache/112x114', $oSub->image)}}"></p> <p class="txt">{{$oSub->name}}</p></a></li>
                     @endforeach
 
                 </ul>
                 <div class="tab-content">
-                    @foreach ($orientationCategory->subCategories as $k => $oSub)
+                    @foreach ($subOrientationCategories as $k => $oSub)
                     <div id="tab{{$k + 1}}" class="{{ ($k == 0) ? 'tab-pane fade in active' : 'tab-pane fade' }}">
                         <h3>{{$oSub->name}}</h3>
-                        <p>{{$oSub->desc}}</p>
-                        <div class="rowbt"> <a href="{{url('chuyen-muc', $oSub->slug)}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
+                        <p>{{($oSub->index_desc) ? $oSub->index_desc : $oSub->desc}}</p>
+                        <div class="rowbt"> <a href="{{url('chuyen-muc', 'huong-nghiep')}}" class="bt mb20px">Tìm hiểu thêm</a> </div>
                     </div>
                     @endforeach
                 </div>
@@ -51,6 +51,12 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
     <!-- client-->
     <section id="client" class="blockrows">
         <div class="inner-page">
